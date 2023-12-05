@@ -1,11 +1,358 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-overflow: hidden;
+@font-face {
+    font-family: Nunito WB;
+    src: url(./fonts/Nunito/Nunito-VariableFont_wght.ttf);
+    src: url(./fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 
-html,body{
-height: 100%;
-width: 100%;
-} 
+:root {
+    --hero-black: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: Nunito WB;
+    color: white;
+}
+
+*::selection {
+    color: black;
+    background-color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--hero-black);
+}
+
+/* ----------scroll setting start ----------- */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: rgba(162, 162, 162, 0.418);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* ----------scroll setting end ----------- */
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* --------------header section start ---------------- */
+.header {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 1rem 0px 1rem;
+}
+
+.logo {
+    width: 8%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    padding-top: 0.7rem;
+}
+
+.logo-icon i {
+    font-size: 1.2rem;
+}
+
+.nav-bar {
+    height: 50%;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6vw;
+    padding-right: 1rem;
+}
+
+.nav-bar>ul {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-bar>ul>a {
+    color: rgb(166, 166, 166);
+    text-decoration: none;
+}
+
+.nav-btn {
+    height: 65%;
+    width: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px transparent;
+    transition: all 0.6s linear;
+    user-select: none;
+}
+
+.nav-btn a {
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+}
+.nav-btn:hover {
+    border-radius:2rem ;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px whitesmoke;
+
+}
+.nav-btn:hover a{
+    color: black;
+    font-weight: 600;
+}
+
+
+/* --------------header section end ---------------- */
+
+/* -------------------hero section start------------------- */
+.hero-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.side-menu {
+    height: fit-content;
+    width: 18rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(270deg);
+}
+
+.opt-1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.opt-2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.hero-detail {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: violet; */
+}
+
+.hero-heading {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    letter-spacing: -5px;
+    transition: all 0.15s linear;
+    user-select: none;
+    cursor: pointer;
+    padding: 2rem, 0rem, 2rem, 0rem;
+}
+
+.wrd-setting {
+    height: 45%;
+    width: max-content;
+    padding: 0rem 1rem;
+    font-size: 14vw;
+    font-weight: 800;
+    overflow: hidden;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-shadow: 0px 0px 10px transparent;
+    animation: 0.7s cubic-bezier(0.63, 0.08, 1, 1) 1 lightBlink 0.75s;
+    transition: all 0.025s linear;
+}
+
+.wrd-setting:hover {
+    color: rgb(21, 253, 253);
+    text-shadow: 0px 0px 20px rgb(21, 253, 253);
+    -webkit-text-stroke: 2px transparent;
+}
+
+.hero-desc {
+    width: 50%;
+}
+
+.right-element {
+    height: 100%;
+    width: 20%;
+    object-fit: contain;
+    position: relative;
+    object-position: center;
+    overflow: hidden;
+}
+
+.box1 {
+    position: absolute;
+    height: 7rem;
+    width: 14rem;
+    top: 100px;
+    right: -15px;
+    border-radius: 4rem;
+    border: 2px solid white;
+    transform: rotate(90deg) scale(1.1);
+    z-index: 10;
+    overflow: hidden;
+    padding-bottom: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    animation: 10s linear infinite bounce-2 0.5s;
+}
+
+.box1 img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    object-position: center;
+    transform: rotate(-90deg) scale(1.1);
+}
+
+.box2 {
+    position: absolute;
+    height: 5rem;
+    width: 12rem;
+    top: 30px;
+    right: 60px;
+    border: 2px solid white;
+    border-radius: 4rem;
+    transform: rotate(90deg) scale(0.65);
+    animation: 7s linear infinite bounce-1 0.5s;
+}
+
+.box3 {
+    position: absolute;
+    height: 7rem;
+    width: 21rem;
+    bottom: 30px;
+    left: -15px;
+    border-radius: 4rem;
+    transform: rotate(90deg);
+    border: 2px solid white;
+    z-index: 12;
+    animation: 5s linear infinite bounce-3 0.5s;
+}
+
+
+
+
+
+/* -------------------hero section end------------------- */
+
+
+/* -----------projects section start--------------------- */
+
+
+
+/* -----------projects section end--------------------- */
+
+
+
+/* ----------- Animations start ------------- */
+
+/* blink animation */
+@keyframes lightBlink {
+    0% {
+        color: transparent;
+        text-shadow: 0px 0px 20px transparent;
+        -webkit-text-stroke: 2px white;
+        text-shadow: 0px 0px 20px transparent;
+    }
+
+    50% {
+        color: rgb(21, 253, 253);
+        -webkit-text-stroke: 2px transparent;
+        text-shadow: 0px 0px 20px rgb(21, 253, 253);
+    }
+
+    85% {
+        color: transparent;
+        text-shadow: 0px 0px 20px transparent;
+        -webkit-text-stroke: 2px white;
+    }
+
+    95% {
+        color: rgb(21, 253, 253);
+        -webkit-text-stroke: 2px transparent;
+        text-shadow: 0px 0px 20px rgb(21, 253, 253);
+    }
+
+    100% {
+        color: transparent;
+        text-shadow: 0px 0px 20px transparent;
+        -webkit-text-stroke: 2px white;
+    }
+}
+
+/* bounce animation */
+
+@keyframes bounce-1 {
+    50% {
+        top: 80px;
+    }
+}
+
+@keyframes bounce-2 {
+    0% {
+        top: 100px;
+    }
+
+    50% {
+        top: 180px;
+    }
+
+    100% {
+        top: 100px;
+    }
+}
+
+@keyframes bounce-3 {
+
+    50% {
+        bottom: 100px;
+    }
+
+}
+
+
+
+
+/* ----------- Animations end ------------- */
