@@ -44,16 +44,26 @@ body {
 }
 
 /* ----------scroll setting end ----------- */
-
+/* 
 .wrapper {
     height: 100%;
     width: 100%;
-}
+} */
 
+.mouse-follower {
+    height: 2vw;
+    width: 2vw;
+    background-color: rgb(255, 68, 0);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
 
 /* --------------header section start ---------------- */
 .header {
-    height: 15%;
+    height: 5vw;
     width: 100%;
     display: flex;
     align-items: center;
@@ -67,6 +77,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 11;
+    cursor: default;
 }
 
 .name {
@@ -84,7 +96,7 @@ body {
 }
 
 .nav-bar {
-    height: 50%;
+    height: 90%;
     width: 50vw;
     display: flex;
     align-items: center;
@@ -105,7 +117,7 @@ body {
 }
 
 .nav-btn {
-    height: 65%;
+    height: 60%;
     width: 22%;
     display: flex;
     justify-content: center;
@@ -119,17 +131,20 @@ body {
 }
 
 .nav-btn a {
+    font-size: 1.25vw;
     color: white;
     font-weight: 300;
     text-decoration: none;
 }
+
 .nav-btn:hover {
-    border-radius:2rem ;
+    border-radius: 2rem;
     background-color: whitesmoke;
     box-shadow: 0px 0px 10px whitesmoke;
-
+    z-index: 11;
 }
-.nav-btn:hover a{
+
+.nav-btn:hover a {
     color: black;
     font-weight: 600;
 }
@@ -139,7 +154,8 @@ body {
 
 /* -------------------hero section start------------------- */
 .hero-section {
-    height: 100%;
+    height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     /* background-color: red; */
@@ -170,16 +186,15 @@ body {
     width: 80%;
     display: flex;
     flex-direction: column;
-    /* background-color: violet; */
 }
 
 .hero-heading {
     height: 80%;
-    width: 80%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     overflow: hidden;
-    letter-spacing: -5px;
     transition: all 0.15s linear;
     user-select: none;
     cursor: pointer;
@@ -187,27 +202,53 @@ body {
 }
 
 .wrd-setting {
-    height: 45%;
-    width: max-content;
-    padding: 0rem 1rem;
-    font-size: 14vw;
+    height: 16.5vw;
+    display: flex;
+    /* gap: 1vw; */
+    padding-left: 1vw;
+}
+
+.word-1 div {
+    width:fit-content;
+    font-size: 11vw;
     font-weight: 800;
     overflow: hidden;
     color: transparent;
     -webkit-text-stroke: 2px white;
     text-shadow: 0px 0px 10px transparent;
-    animation: 0.7s cubic-bezier(0.63, 0.08, 1, 1) 1 lightBlink 0.75s;
+    animation: 0.7s cubic-bezier(0.63, 0.08, 1, 1) 1 lightBlink 1s;
     transition: all 0.025s linear;
+    padding: 1vw;
+}
+.word-2 div {
+    width: fit-content;
+    font-size: 9.8vw;
+    font-weight: 800;
+    overflow: hidden;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-shadow: 0px 0px 10px transparent;
+    animation: 0.7s cubic-bezier(0.63, 0.08, 1, 1) 1 lightBlink 1s;
+    transition: all 0.025s linear;
+    padding: 1.1vw;
 }
 
-.wrd-setting:hover {
-    color: rgb(21, 253, 253);
-    text-shadow: 0px 0px 20px rgb(21, 253, 253);
+.wrd-setting div:nth-child(even):hover {
+    color: #00F091;
+    text-shadow: 0px 0px 20px #00F091;
+    -webkit-text-stroke: 2px transparent;
+}
+.wrd-setting div:nth-child(odd):hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 20px #ffffff;
     -webkit-text-stroke: 2px transparent;
 }
 
+
 .hero-desc {
     width: 50%;
+    z-index: 11;
 }
 
 .right-element {
@@ -217,6 +258,8 @@ body {
     position: relative;
     object-position: center;
     overflow: hidden;
+    z-index: 14;
+    position: relative;
 }
 
 .box1 {
@@ -228,7 +271,7 @@ body {
     border-radius: 4rem;
     border: 2px solid white;
     transform: rotate(90deg) scale(1.1);
-    z-index: 10;
+    z-index: 14;
     overflow: hidden;
     padding-bottom: 8rem;
     display: flex;
@@ -279,6 +322,66 @@ body {
 
 
 /* -----------projects section start--------------------- */
+.project-section {
+    height: 100%;
+    background: -webkit-linear-gradient(151deg, #ffe3d1 0%, #f2dcff 50%, #bdfbe6 100%);
+    background: linear-gradient(151deg, #ffe3d1 0%, #f2dcff 50%, #bdfbe6 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pro-sec-heading {
+    font-size: 7rem;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+    /* color: black; */
+}
+
+.projects-container {
+    height: 70%;
+    width: 85%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(35, 35, 35, 0.642);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 2px solid rgba(35, 35, 35, 0.4);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+}
+
+.project-card-1 {
+    height: 85%;
+    width: 25%;
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(38px);
+    backdrop-filter: blur(38px);
+    border: 1px solid rgba(255, 255, 255, 0.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.project-img {
+    height: 70%;
+    width: 90%;
+    border-radius: 0.9rem;
+    background-image: url("/images/WhatsApp\ Image\ 2023-12-05\ at\ 4.21.24\ PM.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(0.95);
+}
+
+
+
 
 
 
@@ -292,28 +395,19 @@ body {
 @keyframes lightBlink {
     0% {
         color: transparent;
-        text-shadow: 0px 0px 20px transparent;
         -webkit-text-stroke: 2px white;
         text-shadow: 0px 0px 20px transparent;
     }
 
     50% {
-        color: rgb(21, 253, 253);
+        color: rgb(255, 255, 255);
         -webkit-text-stroke: 2px transparent;
-        text-shadow: 0px 0px 20px rgb(21, 253, 253);
+        text-shadow: 0px 0px 20px rgb(255, 255, 255);
     }
 
-    85% {
-        color: transparent;
-        text-shadow: 0px 0px 20px transparent;
-        -webkit-text-stroke: 2px white;
-    }
+    
 
-    95% {
-        color: rgb(21, 253, 253);
-        -webkit-text-stroke: 2px transparent;
-        text-shadow: 0px 0px 20px rgb(21, 253, 253);
-    }
+    
 
     100% {
         color: transparent;
