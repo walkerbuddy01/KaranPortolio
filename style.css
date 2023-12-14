@@ -53,12 +53,19 @@ body {
 .mouse-follower {
     height: 2vw;
     width: 2vw;
-    background-color: rgb(255, 68, 0);
+    background-color: grey;
     border-radius: 50%;
     position: fixed;
     z-index: 10;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mouse-follower h1{
+    font-size: 1vw;
 }
 
 /* --------------header section start ---------------- */
@@ -204,9 +211,11 @@ body {
 .wrd-setting {
     height: 16.5vw;
     display: flex;
-    /* gap: 1vw; */
     padding-left: 1vw;
     overflow: hidden;
+}
+.word-2{
+    padding-left: 1vw;
 }
 
 .W1 {
@@ -254,6 +263,14 @@ body {
 .hero-desc {
     width: 50%;
     z-index: 11;
+}
+
+.para-div{
+    overflow: hidden;
+    padding-left: 3vw;
+}
+.para-content {
+    font-size: 1.1vw;
 }
 
 .right-element {

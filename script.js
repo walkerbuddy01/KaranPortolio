@@ -67,28 +67,38 @@ function cursorFollower() {
   });
 }
 cursorFollower();
-
+  var tl = gsap.timeline();
 function wordAnimation() {
-  gsap.to(".W1", {
+  tl.to(".W1", {
     y: 0,
-    duration: 1,
+    duration: 0.75,
     ease: 'power2.out',
     delay:0.25,
     stagger: 0.2
   });
 
-  gsap.to(".W2", {
+  tl.to(".W2", {
     y: 0,
-    duration: 1,
+    duration: 0.75,
     ease: 'power2.out',
-    delay:0.25,
     stagger: 0.2,
   });
 }
 
 wordAnimation();
 
+function paraAnimation(params) {
+  tl.from(".para-content",{
+    y:100,
+    duration: 1,
+    ease: 'power2.out',
+    stagger: 0.2
 
+  });
+  
+};
+
+paraAnimation();
 
 
 
